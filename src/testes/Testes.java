@@ -8,6 +8,7 @@ public class Testes {
 		PilhaSimples pilha1=new PilhaSimples(5);
 		
 		//Teste Pilha Simples
+		System.out.println("================Pilha Simples================");
 		System.out.println("A pilha está vazia? "+pilha1.empty());
 		pilha1.pop();
 		pilha1.push(1);
