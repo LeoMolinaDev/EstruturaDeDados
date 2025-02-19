@@ -2,10 +2,11 @@ package estruturas;
 
 public class Fila {
 	
-	private final int tamanho;
-	private int inicio;
+	private final int tamanho; //Define o tamanho da fila.
+	private int inicio; //Variável utilizada para retirar elementos da fila
 	private int fim;
 	private int quantidade;
+	private int percorre;
 	private int[] fila;
 	
 	public Fila(int tamanho) {
@@ -14,14 +15,16 @@ public class Fila {
 		inicio=0;
 		fim=-1;
 		quantidade=0;
+		percorre=0;
 	}
 	
 	public void insert(int elemento) {
 		if(full()==true) {
 			System.out.println("Fila cheia...");
 		} else {
-			fim++;
+			fim=(fim+1)%tamanho;
 			quantidade++;
+			percorre++;
 			fila[fim]=elemento;
 		}
 	}
@@ -31,9 +34,10 @@ public class Fila {
 			System.out.println("Fila vazia...");
 			return 0;
 		} else {
-			int removido=fila[inicio];
-			inicio++;
-			return removido;
+			int removido=inicio;
+			inicio=(inicio+1)%tamanho;
+			quantidade--;
+			return fila[removido];
 		}
 	}
 	
@@ -54,7 +58,7 @@ public class Fila {
 	}
 	
 	public void print() {
-		for(int i=inicio;i<quantidade;i++) {
+		for(int i=inicio;i<percorre;i++) {
 			System.out.print(fila[i]+"\t");
 		}
 		System.out.println();
