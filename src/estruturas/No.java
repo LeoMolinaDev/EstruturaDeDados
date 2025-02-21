@@ -3,7 +3,7 @@ package estruturas;
 public class No {
 	
 	private int elemento; //Armazena os elementos da lista.
-	private No proximo; //Guarda o prócximo nó.
+	private No proximo; //Armazena o prócximo nó.
 	
 	public No(int elemento,No proximo) {
 		this.elemento=elemento;

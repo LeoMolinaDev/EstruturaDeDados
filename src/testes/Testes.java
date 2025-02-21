@@ -1,6 +1,7 @@
 package testes;
 
 import estruturas.*;
+import arvores.*;
 
 public class Testes {
 	public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class Testes {
 		PilhaSimples pilha1=new PilhaSimples(5);
 		Fila fila1=new Fila(5);
 		ListaEncadeada lista1=new ListaEncadeada();
+		ArvoreBinariaSimples arvore1=new ArvoreBinariaSimples();
 		
 		//Teste Pilha Simples.
 		System.out.println("================Pilha Simples================");
@@ -62,8 +64,17 @@ public class Testes {
 		lista1.insert(1);
 		lista1.print();
 		
+		//Teste Arvore Binária Simples.
+		System.out.println("================Árvore Binária================");
+		arvore1.insert(10);
+		arvore1.insert(7);
+		arvore1.insert(6);
+		arvore1.insert(8);
+		arvore1.insert(15);
+		arvore1.insert(12);
+		arvore1.insert(17);
+		System.out.println("Elemento encontrado: "+arvore1.encontrarElemento(10));
+		arvore1.printEmOrdem(arvore1.getRaiz());
 		
-		
-
 	}
 }
